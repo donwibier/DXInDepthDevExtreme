@@ -1,0 +1,25 @@
+@page
+@using VS2019FileManager.Models
+
+<h2 class="content-block">Home</h2>
+<script>
+    $(function () {
+        $("#file-manager").dxFileManager({
+            name: "fileManager",
+            fileProvider: new DevExpress.FileProviders.WebApi({
+                endpointUrl: '@Url.Action("FileSystem", "AzureApi")'
+            }),
+            height: 450,
+            permissions: {
+                create: true,
+                copy: true,
+                move: true,
+                remove: true,
+                rename: true,
+                upload: true
+            }
+        });
+    });
+
+</script>
+<div id="file-manager"></div>

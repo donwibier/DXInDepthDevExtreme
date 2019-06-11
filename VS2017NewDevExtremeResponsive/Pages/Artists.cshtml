@@ -1,0 +1,31 @@
+﻿@page
+@{
+	ViewData["Title"] = "Artists";
+}
+
+<h2>Artists</h2>
+@(Html.DevExtreme().TagBox().DataSource(new String[] { "Aerosmith", "Van Halen" }))
+
+@(Html.DevExtreme().DataGrid<Models.Artist>()
+		.DataSource(ds => ds.Mvc()
+			.Controller("Artists")
+			.LoadAction("Get")
+			.InsertAction("Post")
+			.UpdateAction("Put")
+			.DeleteAction("Delete")
+			.Key("ArtistId")
+		)
+		.RemoteOperations(true)
+		.Columns(columns =>
+		{
+
+			columns.AddFor(m => m.ArtistId).Width(100);
+
+			columns.AddFor(m => m.Name);
+		})
+		.Editing(e => e
+			.AllowAdding(true)
+			.AllowUpdating(true)
+			.AllowDeleting(true)
+		)
+)

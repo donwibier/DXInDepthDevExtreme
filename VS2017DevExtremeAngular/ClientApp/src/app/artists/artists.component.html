@@ -1,0 +1,22 @@
+<h1>Artists</h1>
+
+<dx-data-grid
+    [dataSource]="dataSource"
+    [remoteOperations]="true"> 
+    <dxo-editing 
+        [allowAdding]="true" 
+        [allowUpdating]="true" 
+        [allowDeleting]="true" 
+    ></dxo-editing> 
+
+    <dxi-column width="100"
+        dataField="artistId"
+        dataType="number">
+    </dxi-column>
+
+    <dxi-column
+        dataField="name"
+        dataType="string">
+    </dxi-column>
+
+</dx-data-grid>
