@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { DxDataGridModule } from 'devextreme-angular';
 import { ArtistsComponent } from './artists/artists.component';
+import { AlbumsComponent } from './albums/albums.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ArtistsComponent } from './artists/artists.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ArtistsComponent
+    ArtistsComponent,
+    AlbumsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,6 +32,8 @@ import { ArtistsComponent } from './artists/artists.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'artists', component: ArtistsComponent },
+      { path: 'albums', component: AlbumsComponent },
+      
     ]),
     DxDataGridModule
   ],

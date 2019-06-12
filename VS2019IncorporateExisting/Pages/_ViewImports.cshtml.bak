@@ -1,0 +1,3 @@
+@using VS2019IncorporateExisting
+@namespace VS2019IncorporateExisting.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

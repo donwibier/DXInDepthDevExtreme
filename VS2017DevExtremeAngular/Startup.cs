@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using Newtonsoft.Json.Serialization;
 
 namespace VS2017DevExtremeAngular
 {
@@ -25,7 +26,10 @@ namespace VS2017DevExtremeAngular
 			var connection = @"Server=(localdb)\mssqllocaldb;Database=Chinook;Trusted_Connection=True;ConnectRetryCount=0";
 			services.AddDbContext<ChinookContext>(options => options.UseSqlServer(connection));
 
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+			services
+				.AddMvc()
+				.SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+				.AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
 			// In production, the Angular files will be served from this directory
 			services.AddSpaStaticFiles(configuration =>

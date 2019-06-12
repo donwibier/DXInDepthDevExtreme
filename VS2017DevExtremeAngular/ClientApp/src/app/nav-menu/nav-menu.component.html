@@ -32,7 +32,11 @@
                 <span class='glyphicon glyphicon-th-list'></span> Show Artists
               </a>
             </li>
-
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/albums"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Show Albums
+              </a>
+            </li>
           </ul>
         </div>
     </div>

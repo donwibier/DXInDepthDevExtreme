@@ -1,0 +1,28 @@
+<h1>albums</h1>
+
+<dx-data-grid
+    [dataSource]="dataSource"
+    [remoteOperations]="true"> 
+    <dxo-editing 
+        [allowAdding]="true" 
+        [allowUpdating]="true" 
+        [allowDeleting]="true" 
+    ></dxo-editing> 
+
+    <dxi-column
+        dataField="AlbumId"
+        dataType="number">
+    </dxi-column>
+
+    <dxi-column
+        dataField="Title"
+        dataType="string">
+    </dxi-column>
+
+    <dxi-column
+        dataField="ArtistId"
+        dataType="number">
+        <dxo-lookup [dataSource]="artistLookupData" valueExpr="Value" displayExpr="Text"></dxo-lookup> 
+    </dxi-column>
+
+</dx-data-grid>
